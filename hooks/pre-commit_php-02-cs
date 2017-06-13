@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Determine if a file list is passed
+if [ "$#" -eq 1 ]
+then
+    oIFS=$IFS
+    IFS='
+	'
+    SFILES="$1"
+    IFS=$oIFS
+fi
+
+echo "Running Code Sniffer..."
+
+echo $SFILES
+
+if [ "$SFILES" != "" ]
+then
+    phpcs --standard=Drupal -n $SFILES
+    if [ $? != 0 ]
+    then
+	echo "Fix the error before commit."
+	exit 1
+    fi
+fi
+
+exit $?

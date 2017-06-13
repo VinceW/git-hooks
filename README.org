@@ -19,7 +19,7 @@ Use git to clone this repository and copy the pre-commit_* files into
 your projects .git/hooks/ directory.
 
 Now when you run git commit the pre-commit script will be executed, it
-will find the pre-commit_* script(s) and execute it(them)t.  
+will find the pre-commit_* script(s) and execute it(them).  
 
 The pre-commit_phpcs script will analyse relevant committed files
 against the Drupal coding standard and feedback errors and warnings.

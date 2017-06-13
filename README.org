@@ -1,0 +1,35 @@
+* git-hooks
+A collection of useful git hooks
+
+
+** What
+
+A collection of useful pre-commit git hooks.
+
+- pre-commit: A wrapper hook that lives in and looks in the
+  .git/hooks/ dir for other scripts whose name filename begins with
+  pre-commit_ and runs those hooks.
+- pre-commit_phpcs: A hook script to check files against the drupal
+  coding standard requies phpcs and drupalcodesniffer. for
+  installation of those see: http://drupal.org/project/drupalcs
+
+** Installation and Usage
+
+Use git to clone this repository and copy the pre-commit_* files into
+your projects .git/hooks/ directory.
+
+Now when you run git commit the pre-commit script will be executed, it
+will find the pre-commit_* script(s) and execute it(them)t.  
+
+The pre-commit_phpcs script will analyse relevant committed files
+against the Drupal coding standard and feedback errors and warnings.
+
+In the event that you wish to commit your files regardless of the
+standards errors do:
+
+git commit --no-verify
+
+and git will not execute the pre-commit hooks
+
+** Original idea 
+- https://www.drupal.org/sandbox/bevan.wishart/1441638

@@ -4,7 +4,7 @@ A collection of useful git hooks
 
 ** What
 
-A collection of useful pre-commit git hooks.
+A collection of useful git hooks.
 
 - pre-commit: A wrapper hook that lives in and looks in the
   .git/hooks/ dir for other scripts whose name filename begins with

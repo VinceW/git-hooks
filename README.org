@@ -11,7 +11,7 @@ A collection of useful git hooks.
   pre-commit_ and runs those hooks.
 - pre-commit_php-01-lint: A hook script to check files with PHP lint. 
 - pre-commit_php-02-cs: A hook script to check files against a PHP coding
-  standard. Requires phpcs. 
+  standard. 
 
 ** Installation and Usage
 
@@ -32,4 +32,19 @@ git commit --no-verify
 #+END_SRC
 
 and git will not execute the pre-commit hooks
+
+** Dependencies
+
+Some scripts require other software available on your system. There is
+a composer.json file in this repository. You may use [[https://getcomposer.org][Composer]] to fetch
+(most) required software. It will be stored in a newly created vendor
+directory. Just issue the command:
+
+#+BEGIN_SRC sh
+composer install
+#+END_SRC
+
+*** PHP_CodeSniffer
+[[https://github.com/squizlabs/PHP_CodeSniffer][PHP_CodeSniffer]] is required by:
+- pre-commit_php-02-cs
 

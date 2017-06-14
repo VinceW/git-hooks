@@ -53,3 +53,6 @@ composer update
 [[https://github.com/squizlabs/PHP_CodeSniffer][PHP_CodeSniffer]] is required by:
 - pre-commit_php-02-cs
 
+*** Drupal Coder
+[[https://www.drupal.org/project/coder][Dupal]] Coder is required by:
+- pre-commit_php-02-cs

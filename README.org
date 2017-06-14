@@ -44,7 +44,7 @@ a composer.json file in this repository. You may use [[https://getcomposer.org][
 directory. Just issue the command:
 
 #+BEGIN_SRC sh
-composer install
+composer update
 #+END_SRC
 
 *** PHP_CodeSniffer

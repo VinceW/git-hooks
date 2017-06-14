@@ -24,7 +24,7 @@ A collection of useful git hooks.
 Now when you run git commit the pre-commit script will be executed, it
 will find the pre-commit_* script(s) and execute it(them).  
 
-The pre-commit_phpcs script will analyse relevant committed files
+The pre-commit_php-02-cs script will analyse relevant committed files
 against a PHP coding standard and feedback errors and warnings.
 
 In the event that you wish to commit your files regardless of the

@@ -15,8 +15,11 @@ A collection of useful git hooks.
 
 ** Installation and Usage
 
-Use git to clone this repository and copy the pre-commit_* files into
-your projects .git/hooks/ directory.
+- clone this repository
+- cd into the new directory
+- run composer update
+- move the content of the hooks/ directory to the .git/hooks/
+  directory of your project.
 
 Now when you run git commit the pre-commit script will be executed, it
 will find the pre-commit_* script(s) and execute it(them).  

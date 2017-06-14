@@ -1,0 +1,9 @@
+
+language: php
+
+install:
+  - composer update
+
+script:
+  - hooks/pre-commit_php-02-cs ./tests/test.php
+

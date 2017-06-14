@@ -4,7 +4,9 @@
 
 ** What
 
-A collection of useful git hooks.
+A collection of useful git hooks. It’s entirely up to the developer to
+use these scripts on the client side. So, these are scripts to help
+developers not to enforce policies.
 
 - pre-commit: A wrapper hook that lives in and looks in the
   .git/hooks/ dir for other scripts whose name filename begins with

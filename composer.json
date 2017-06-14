@@ -1,5 +1,13 @@
 {
+
+    "config": {
+	"vendor-dir": "hooks/vendor"
+    },
+    
     "require-dev": {
-	"squizlabs/php_codesniffer": "3.*"
+	"squizlabs/php_codesniffer": "2.*"
+    },
+    "require": {
+	"drupal/coder": "8.*"
     }
 }

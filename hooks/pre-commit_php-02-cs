@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Determine if a file list is passed
 if [ "$#" -eq 1 ]
@@ -16,7 +16,17 @@ echo $SFILES
 
 if [ "$SFILES" != "" ]
 then
-    phpcs --standard=Drupal -n $SFILES
+    BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    echo $BASE_DIR
+    VENDOR="$BASE_DIR/vendor"
+    VENDOR_BIN="$VENDOR/bin"
+    $VENDOR_BIN/phpcs --version
+
+    # register drupal standards
+    $VENDOR_BIN/phpcs --config-set installed_paths $VENDOR/drupal/coder/coder_sniffer
+
+    # check against standards
+    $VENDOR_BIN/phpcs --standard=Drupal -n $SFILES
     if [ $? != 0 ]
     then
 	echo "Fix the error before commit."

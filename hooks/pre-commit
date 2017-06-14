@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # place this file in your $GIT_DIR/hooks directory and call it pre-commit
 # anyother scripts you want to execture on commit can then also be placed
@@ -7,21 +7,12 @@
 # finds it and runs it.
 #
 
-GIT_DIR=$(git rev-parse --git-dir 2>/dev/null)
-PROJECT=`php -r "echo dirname(dirname(dirname(realpath('$0'))));"`
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 STAGED_FILES_CMD=`git diff --cached --name-only --diff-filter=ACMR HEAD | grep -e '\.module' -e '\.inc'`
 FILES=${SFILES:-$STAGED_FILES_CMD}
 
-echo $FILES
-
-echo "pre-commit hook\n";
-
-if [ -z "$GIT_DIR" ]; then
-  echo >&2 "fatal: hooks/functions: GIT_DIR not set"
-  exit 1
-fi
-
-for i in `ls $GIT_DIR/hooks/pre-commit_*`;
+echo "pre-commit hook";
+for i in `ls $DIR/pre-commit_*`;
 do $i $FILES;
 if [ "$?" -ne "0" ]; then
   exit 1

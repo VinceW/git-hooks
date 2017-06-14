@@ -1,6 +1,6 @@
 * git-hooks
 
-https://travis-ci.org/VinceW/git-hooks.svg?branch=master]]
+[[https://travis-ci.org/VinceW/git-hooks.svg?branch=master]]
 
 ** What
 

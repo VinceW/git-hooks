@@ -8,7 +8,7 @@
 #
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-STAGED_FILES_CMD=`git diff --cached --name-only --diff-filter=ACMR HEAD | grep -e '\.module' -e '\.inc'`
+STAGED_FILES_CMD=`git diff --cached --name-only --diff-filter=ACMR HEAD | grep -e '\.module' -e '\.inc' -e '\.install'`
 FILES=${SFILES:-$STAGED_FILES_CMD}
 
 echo "pre-commit hook";
